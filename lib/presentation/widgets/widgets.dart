@@ -1,0 +1,1 @@
+export 'shared/core_menu.dart';
