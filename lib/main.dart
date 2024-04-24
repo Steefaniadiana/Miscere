@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:miscere_varius_ifab/config/config.dart';
 
+
 void main() {
-  runApp(const MainApp());
+
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp
+  ]);
+  // revisar el pubspec: da problemas     descargar: sensor Plus
+
+  runApp(const ProviderScope(child: MainApp()));
+
 }
 
 class MainApp extends StatelessWidget {

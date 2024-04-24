@@ -1,17 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../providers/providers.dart';
 
-class MagnetometrumScreen extends StatelessWidget {
+class MagnetometrumScreen extends ConsumerWidget {
   const MagnetometrumScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold( 
-      appBar: AppBar( 
+  Widget build(BuildContext context, WidgetRef ref) {
+
+    final magnetometrum$ = ref.watch( magnetometrumProvider );
+
+    return Scaffold(
+      appBar: AppBar(
         title: const Text('Magnetómetro'),
       ),
-      body: const Center(
-        child: Text('Holii'),
-      ),
+      body: Center(
+        child:  magnetometrum$.when(
+          data: (value) => Text(
+            value.x.toString(),  
+            style: const TextStyle(fontSize: 30),
+          ), 
+          error: (error, stackTrace) => Text('$error'), 
+          loading: () => const CircularProgressIndicator()
+        )
+      )
     );
   }
 }
