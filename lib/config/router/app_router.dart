@@ -27,5 +27,17 @@ final router = GoRouter(
       path: '/compass', 
       builder: (context, state) => const PyxisScreen()
       ),
+      
+      GoRoute(
+      path: '/pokemons', 
+      builder: (context, state) => const PokemonsScreen(), 
+      //routes: [
+        // GoRoute(
+          // path: '/id', 
+          // builder: (context, state) => const ()
+        // ),
+      //]
+      
+      ),
   ]
   );
