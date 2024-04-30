@@ -5,3 +5,4 @@ export 'sensoriis/pyxis_screen.dart';
 export 'sensoriis/gyroscope_sphera_screen.dart';
 export 'sensoriis/magnetometrum_screen.dart';
 export 'pokemons/pokemons_screen.dart';
+export 'pokemons/pokemon_screen.dart';
