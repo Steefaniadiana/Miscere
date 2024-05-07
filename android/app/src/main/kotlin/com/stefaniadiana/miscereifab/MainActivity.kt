@@ -1,4 +1,4 @@
-package com.example.miscere_varius_ifab
+package com.stefaniadiana.miscereifab
 
 import io.flutter.embedding.android.FlutterActivity
 

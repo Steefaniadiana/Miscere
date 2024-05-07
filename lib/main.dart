@@ -29,3 +29,6 @@ class MainApp extends StatelessWidget {
     );
   }
 }
+
+
+// namespace "com.stefaniadiana.miscereifab"
