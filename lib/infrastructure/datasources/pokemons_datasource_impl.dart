@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:miscere_varius_ifab/domain/domain.dart';
+import 'package:miscere_varius_ifab/infrastructure/mappers/pokemon_mapper.dart';
 
 class PokemonsDatasourceImpl implements PokemonsDatasource {
 
@@ -12,7 +13,10 @@ class PokemonsDatasourceImpl implements PokemonsDatasource {
 
     try {
       final responsio = await dio.get('/pokemon/$id') ;
-      return (null, 'Churri que no sale el Pokemon');
+
+      final pokemon = PokemonMapper.pokeApiPokemonToEntity(responsio.data);
+      
+       return (pokemon, 'Churri mira que Pokemon más chuloo');
 
     } catch (e) {
       return (null, 'Churri que no sale el Pokemon');
